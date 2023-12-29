@@ -67,6 +67,7 @@ ipch/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
+Folder.DotSettings
 
 # Click-Once directory
 publish/
