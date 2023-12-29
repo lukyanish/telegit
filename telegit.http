@@ -1,0 +1,52 @@
+@telegit_HostAddress = http://localhost:7000
+
+POST {{telegit_HostAddress}}/api/gitlab-webhook
+Content-Type: application/json
+
+{
+  "object_kind": "merge_request",
+  "event_type": "merge_request",
+  "user": {
+    "name": "John Doe",
+    "username": "johndoe",
+    "avatar_url": "https://example.com/avatar.png"
+  },
+  "project": {
+    "id": 123,
+    "name": "example-project",
+    "description": "An example GitLab project",
+    "web_url": "https://gitlab.com/example/example-project"
+  },
+  "object_attributes": {
+    "action": "open",
+    "id": 456,
+    "target_branch": "main",
+    "source_branch": "feature-branch",
+    "source_project_id": 789,
+    "author_id": 101,
+    "created_at": "2023-01-01T12:34:56Z",
+    "title": "Feature: New Feature",
+    "description": "This is a description of the merge request",
+    "url": "https://gitlab.com/example/example-project/-/merge_requests/456",
+    "state": "opened",
+    "merge_status": "can_be_merged",
+    "merge_error": null,
+    "merge_params": {
+      "force_remove_source_branch": null
+    },
+    "work_in_progress": false,
+    "merge_when_pipeline_succeeds": false,
+    "source": {
+      "id": 789,
+      "name": "example-project",
+      "description": "An example GitLab project",
+      "web_url": "https://gitlab.com/example/example-project"
+    },
+    "target": {
+      "id": 123,
+      "name": "example-project",
+      "description": "An example GitLab project",
+      "web_url": "https://gitlab.com/example/example-project"
+    }
+  }
+}
