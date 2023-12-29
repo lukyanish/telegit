@@ -32,4 +32,4 @@ startup:
       - photon
       - infrastructure
     script:
-      - docker run -d -p 6000:6000 $IMAGE_NAME:latest
+      - docker run -d -p 6000:6000 $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
