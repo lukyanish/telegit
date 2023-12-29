@@ -2,9 +2,9 @@ variables:
   IMAGE_NAME: telegit
     
 before_script: 
-  - echo "export GITLAB_SECRET_TOKEN=$CI_ENV_GITLAB_SECRET_TOKEN"
-  - echo "export TELEGRAM_API_TOKEN=$CI_ENV_TELEGRAM_API_TOKEN"
-  - echo "export TELEGRAM_CHAT_ID=$CI_ENV_TELEGRAM_CHAT_ID"
+  - export GITLAB_SECRET_TOKEN=$GITLAB_SECRET_TOKEN
+  - export TELEGRAM_API_TOKEN=$TELEGRAM_API_TOKEN
+  - export TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID
 
 stages:
   - build
