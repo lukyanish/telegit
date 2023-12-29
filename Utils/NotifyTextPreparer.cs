@@ -1,7 +1,7 @@
 using System.Text;
 using telegit.Controllers;
 
-namespace telegit;
+namespace telegit.Utils;
 
 public static class NotifyTextPreparer
 {

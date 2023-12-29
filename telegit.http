@@ -1,4 +1,4 @@
-@telegit_HostAddress = http://localhost:7000
+@telegit_HostAddress = http://localhost:6000
 
 POST {{telegit_HostAddress}}/api/gitlab-webhook
 Content-Type: application/json
