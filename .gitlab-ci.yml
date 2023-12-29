@@ -1,5 +1,3 @@
-# .net application
-
 variables: 
   IMAGE_NAME: telegit
     
@@ -22,7 +20,7 @@ build:
   script:
     - docker build -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
     - docker tag $IMAGE_NAME:$CI_COMMIT_SHORT_SHA $IMAGE_NAME:latest
-    - docker images -a | grep $IMAGE_NAME | grep -v latest | awk '{print $3}' | xargs docker rmi -f
+    # - docker images -a | grep $IMAGE_NAME | grep -v latest | awk '{print $3}' | xargs docker rmi -f
       
 startup:
     stage: startup
