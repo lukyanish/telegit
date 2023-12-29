@@ -16,6 +16,9 @@ build:
   stage: build
   only:
       - main
+  tags:
+    - photon
+    - infrastructure
   script:
     - docker build -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
     - docker tag $IMAGE_NAME:$CI_COMMIT_SHORT_SHA $IMAGE_NAME:latest
@@ -25,5 +28,8 @@ startup:
     stage: startup
     only:
       - main
+    tags:
+      - photon
+      - infrastructure
     script:
       - docker run -d -p 6000:6000 $IMAGE_NAME:latest
