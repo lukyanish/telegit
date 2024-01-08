@@ -10,7 +10,7 @@ public static class NotifyTextPreparer
         if (mergeRequest == null) throw new Exception("Merge request is null.");
         if (mergeRequest.object_attributes.action != "open") throw new Exception("Close event triggered.");
         var reviewersString = ReviewersToString(mergeRequest.reviewers);
-        var message = $"<b>Новый Merge Request на {mergeRequest.project.name}</b> \nОт: <b>{mergeRequest.user.name}</b> \nОткуда: <i>{mergeRequest.object_attributes.source_branch}</i>\nКуда: <i>{mergeRequest.object_attributes.target_branch}</i> \nНазначены: {reviewersString ?? "Неизвестно."} \n\n \n {mergeRequest.object_attributes.url}";
+        var message = $"<b>Пришел новый Merge Request на {mergeRequest.project.name}</b> \nОт: <b>{mergeRequest.user.name}</b> \nОткуда: <i>{mergeRequest.object_attributes.source_branch}</i>\nКуда: <i>{mergeRequest.object_attributes.target_branch}</i> \nНазначены: {reviewersString ?? "Неизвестно."} \n\n \n {mergeRequest.object_attributes.url}";
 
         return message;
     }
